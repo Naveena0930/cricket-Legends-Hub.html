@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body{
+  margin: 0;
+  padding: 0;
+  background-color: #a4ede7;
+}/* Blog Section */
+.blog-section {
+  width: 100%;
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7caaff, #edb581); /* Gradient background */
+  color: rgb(238, 232, 232);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+   /* Limit width for readability */
+  animation: glow 1s ease-in-out infinite alternate;
+}
+.blog-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-family: 'Lora', serif; /* Stylish serif font for title */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff; /* Gold color for title */
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Text shadow for title */
+  position: relative;
+}
+.blog-section h2::after {
+  content: '';
+  display: block;
+  width: 60px; /* Wider to make it more noticeable */
+  height: 5px; /* Thicker line */
+  background-color: #53d91a; /* Gold underline */
+  margin-top: 10px;
+  margin-left: 0;
+}
+.blog-section p {
+  font-size: 18px;
+  line-height: 1.7;
+  font-family: 'Open Sans', sans-serif; /* Clean, modern font for text */
+  color: #e8cece;
+  margin-top: 20px;
+  font-weight: 500;
+}
+.blog-section::before {
+  content: '';
+  position: absolute;
+  top: -0%;
+  left: -40%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(7, 11, 130, 0.1), rgba(140, 5, 213, 0));
+  animation: rotate 6s linear infinite;
+  z-index: 0;
+}
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+@keyframes glow {
+  0% {
+      box-shadow: 0 0 15px rgba(12, 3, 7, 0.5); /* Glow effect */
+  }
+  100% {
+      box-shadow: 0 0 30px rgba(255, 215, 0, 1); /* Intense glow */
+  }
+}
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #35a6ec; /* Purple background */
+  padding: 10px 20px;
+}
+.div-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.name-1, .name-2, .name-3 {
+  margin: 0;
+  padding: 0;
+  font-size: 29px;
+  line-height: 1;
+}
+.name-1 {
+  
+  font-weight: bold;
+  color: #FF9933; /* Orange */
+}
+.name-2 {
+  font-weight: bold;
+  color: #ffffff; /* White */
+}
+.name-3 {
+  font-weight: bold;
+  color: #09ff09; /* Green */
+}
+/* Centering the navigation menu */
+.Menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu-item {
+  margin: 0 20px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ffffff; /* White text */
+  position: relative;
+}
+.menu-item::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: #ffffff; /* White underline */
+  transition: width 0.3s ease;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+.menu-item:hover::after {
+  width: 100%;
+}
+/* Profile image and text on the right */
+.login-img {
+  display: flex;
+  align-items: center;
+}
+.login-img img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #ffffff; /* White border around profile image */
+}
+.login-img h2 {
+  font-size: 18px;
+  margin: 0;
+  color: #ffffff; /* White text for 'Profile' */
+}
+h1, h2 {
+    font-size: 50px;
+    color: #806262;
+}
+/* Featured Players Section */
+#featured-players {
+    padding: 20px;
+    text-align: center;
+}
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fffdfd;
+}
+/* Container for Scrollable Players Section */
+.players-container {
+    overflow-x: scroll;  /* Enables horizontal scrolling */
+    overflow-y: hidden;  /* Disables vertical scrolling */
+    white-space: nowrap; /* Prevents items from wrapping to the next line */
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+/* Players should appear side by side */
+.players {
+    display: flex;
+    flex-wrap: nowrap;   /* Prevents wrapping, aligns players horizontally */
+    gap: 20px;           /* Spacing between player cards */
+    width: max-content;  /* Allows the flex container to expand beyond the viewport */
+}
+.player {
+    border: 3px solid #0a0909;
+    padding: 10px;
+    background-color:#101012;
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+    white-space: normal;
+    flex: 0 0 auto; /* Prevents shrinking or expanding */
+}
+.player img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.player h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #f9f7f2;
+    font-style: bold;
+    font-weight: 800;
+}
+
+.player p {
+    font-size: 14px;
+    color: #151414;
+}
+
+/* Hover Effect for Player Cards */
+.player:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+.players-container::-webkit-scrollbar {
+    display: none;
+} 
+  .div-name {
+  display: flex;
+  flex-direction: column;
+}
+.match-list-title{
+  color: #0e0e0e;
+  justify-content: center;
+  text-align: center;
+}
+.match-list-container {
+  padding: 0 20px;
+}
+.match-list-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.match-list {
+  display: flex;
+  align-items: center;
+  height: 300px;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
+}
+.match-list-item {
+  margin-right: 30px;
+  position: relative;
+}
+.match-list-item:hover .match-list-item-img {
+  transform: scale(1.2);
+  margin: 0 30px;
+  opacity: 0.5;
+}
+.match-list-item:hover .match-list-item-title,
+.match-list-item:hover .match-list-item-desc,
+.match-list-item:hover .match-list-item-button {
+  opacity: 1;
+}
+.match-list-item-img {
+  transition: all 1s ease-in-out;
+  width: 270px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.match-list-item-title {
+  background-color: #00000000;
+  padding: 0 10px;
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  top: 10%;
+  left: 50px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.match-list-item-desc {
+  background-color: #33333300;
+  padding: 10px;
+  font-size: 14px;
+  position: absolute;
+  top: 30%;
+  left: 50px;
+  width: 230px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.match-list-item-button {
+  padding: 10px;
+  background-color: #510a87;
+  color: rgb(14, 12, 12);
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.avn{
+  color: #e31d1d;
+}
+.container.active {
+  background-color: white;
+}
+.match-list-title.active {
+  color: black;
+}
+.navbar-container.active {
+  background-color: white;
+
+  color: black;
+}
+.sidebar.active{
+    background-color: white;
+}
+.left-menu-icon.active{
+    color: black;
+}
+.toggle.active{
+    background-color: black;
+}
+.toggle-ball.active{
+    background-color: white;
+    transform: translateX(-20px);
+}
+@media only screen and (max-width: 940px){
+    .menu-container{
+        display: none;
+    }
+}
+.legends-title {
+  text-align: center;  /* Center the text */
+  font-size: 54px;
+  font-weight: bold;
+  color: #0e0e0f;  /* You can change the color as needed */
+  margin-bottom: 10px; /* Adds some space between text and the content below */
+}
+#map-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 20px;
+  border: 4px solid black;
+  box-shadow: 0px 4px 8px rgba(66, 18, 198, 0.3);
+}
+.player-photo {
+  width: 160px;  /* Slightly larger than before */
+  height: 200px; /* Proportionally larger */
+  border-radius: 10px; /* Rounded edges */
+  overflow: hidden;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
+}
+.player-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container */
+}
+/* Player details in the middle */
+.player-details {
+  flex-grow: 1;
+  text-align: center;
+}
+.player-details h2 {
+  font-size: 30px;
+  color: #0b0a0b;
+  margin-bottom: 10px;
+}
+.player-details p {
+  font-size: 20px;
+  color: #333;
+  margin: 5px 0;
+}
+/* Responsive for smaller screens */
+@media (max-width: 800px) {
+  #map-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #map {
+    width: 100%;
+    height: 250px;
+  } 
+  .player-photo {
+    margin-bottom: 18px;
+  }
+}
+.separator {
+  text-align: center; /* Center the content */
+  margin: 40px 0; /* Space above and below */
+}
+.separator::before {
+  content: ''; /* Create a line before the text */
+  display: block;
+  width: 80%; /* Width of the line */
+  height: 2px; /* Thickness of the line */
+  background-color: #b0e0e6; /* Dark purple color */
+  margin: 0 auto; /* Center the line */
+  border-radius: 5px; /* Slightly rounded edges */
+}
+.separator-text {
+  display: inline-block; /* Keep the text inline with the line */
+  padding: 0 10px; /* Padding around the text */
+  font-size: 18px; /* Font size */
+  color: #333; /* Text color */
+  font-weight: bold; /* Bold text */
+  background-color: #f0f8ff; /* Light blue background for contrast */
+  border-radius: 10px; /* Rounded corners for the text box */
+  position: relative; /* For positioning */
+  top: -10px; /* Adjust position to overlap the line */
+} 
+.contact-form {
+  background-color:#bc8f8f;
+  ;
+  padding: 20px;
+  border-radius: 10px;
+  width: 490px; /* Set a fixed width */
+  margin: 0 auto; /* Center the form horizontally */
+}
+.contact-form label {
+  color: rgb(255, 255, 255);
+}
+.contact-form .heading {
+  font-size: 24px;
+  color: rgb(255, 252, 252);
+  margin-bottom: 12px;
+  font-weight: bold;
+  display: block;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form label {
+  margin-bottom: 10px;
+}
+textarea {
+  resize: none;
+  height: 80px;
+}
+.contact-form input, .contact-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ea4d6f;
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+.contact-form button[type="submit"] {
+  background-color: #ff6384;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.contact-form button[type="submit"]:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+.quiz-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f1d4af;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #151515;
+}
+
+.options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #151515;
+}
+
+.options li {
+  padding: 10px;
+  border: 1px solid #373232;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.options li:hover {
+  background-color: #7f7777;
+}
+
+.options li.correct {
+  background-color: #00ff3c;
+  color: #131413;
+}
+
+.options li.incorrect {
+  background-color: #eb0014;
+  color: #000000;
+}
+
+.footer {
+  background-color: #4b0076;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-top: 5px solid #f5f5f5;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-heading {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.footer-subheading {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.footer-divider {
+  margin: 20px 0;
+  border-color: #f5f5f5;
+}
+
+.footer-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-coder p,
+.footer-social p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.social-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-rights {
+  font-size: 12px;
+}
+  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Legends</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.gomaps.pro/maps/api/js?key=AlzaSyPknH72_4eF-E3-2dVkc9JwtJg9W6eYk5G&callback=initMAP" async defer></script>
+   <script src="scripts.js" defer></script>
+</head>
+<body>
+    <!-- Home Page Section -->   
+  <nav class="navbar">
+    <div class="div-name">
+      <h2 class="name-1">Cricket</h2>
+      <h2 class="name-2">Legends</h2>
+      <h3 class="name-3">Hub</h3>
+    </div>
+    <ul class="Menu ">
+      <li class="menu-item" href="#">Home</li>
+      <li class="menu-item" href="#">About</li>
+      <li class="menu-item" href="#">History</li>
+      <li class="menu-item" href="#">Players</li>
+      <li class="menu-item" href="#">Matches</li>
+      <li class="menu-item" href="#">Achievements</li>
+    </ul>
+    <div class="login-img">
+      <img src="C:\Users\Naveena\Downloads\1 (1).png" alt="login-img">
+      <h2>Profile</h2>
+    </div>
+  </nav>
+  <!--Blog Section --> 
+  <div class="blog-section">
+    <h2>History of  Cricket</h2>
+    <p>
+        Cricket boasts a rich and illustrious history that traces its origins back to the 16th century in England, gradually transcending borders to achieve global prominence. The inaugural Test match in 1877 heralded the dawn of international competition, setting the stage for legendary figures such as Sir Donald Bradman and Sir Garfield Sobers to shape the game’s legacy. The advent of limited-overs formats in the 20th century, culminating in the first Cricket World Cup in 1975, revolutionized the sport and expanded its appeal. Today, cricket stands as a vibrant cultural phenomenon, uniting millions of passionate fans worldwide and fostering an enduring spirit of camaraderie among nations. </p>
+  </div> 
+  </body>
+  </html>
+    <!-- Featured Players Section -->
+    <section id="featured-players">  
+        <h2 style="font-size: 35px; font-weight:1000; color:rgb(9, 7, 11); text-decoration: underline; font-style:Bold;">Featured Players</h2>
+        <div class="players-container">
+            <div class="players">
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\Virat Kohli.jpg"alt="Player 1">
+                    <h3>Virat Kohli (India)</h3>
+                    <p>Notable Achievement: Fastest to 8,000, 9,000, 10,000, and 12,000 ODI runs, with over 80 international centuries.</p>
+                </div> 
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\Sir Don Bradman.jpg"Player 2">
+                    <h3>Sir Don Bradman (Australia)</h3>
+                    <p>Notable Achievement: Holds the highest Test batting average of 99.94, a record unmatched in cricket history.</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\sachin.jpg" alt="Player 3">
+                    <h3>Sachin Tendulkar (India)</h3>
+                    <p>Notable Achievement: First cricketer to score 100 international centuries and over 34,000 international runs.</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\jacques.jpg" alt="Player 4">
+                    <h3>Jacques Kallis (South Africa)</h3>
+                    <p>Notable Achievement: Only player to score over 10,000 runs and take more than 250 wickets in both Tests and ODIs.</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\Brian Lara.jpg" alt="Player 5">
+                    <h3>Brian Lara (West Indies)</h3>
+                    <p>Notable Achievement: Holds the record for the highest individual score in Test cricket (400*).</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\Shane Warne.jpg" alt="Player 6">
+                    <h3>Shane Warne (Australia)</h3>
+                    <p>Notable Achievement: Revolutionized leg-spin bowling, with over 700 Test wickets.</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\Muttiah Muralitharan.jpg" alt="Player 7">
+                    <h3>Muttiah Muralitharan (Sri Lanka)</h3>
+                    <p>Notable Achievement: Leading wicket-taker in both Test and ODI cricket, with 800 Test wickets.</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\AB de Villiers.jpg" alt="Player 8">
+                    <h3>AB de Villiers (South Africa)</h3>
+                    <p>Notable Achievement: Known for his versatility, holds the record for the fastest ODI century (31 balls).</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\Kumar Sangakkara.jpg" alt="Player 9">
+                    <h3>Kumar Sangakkara (Sri Lanka)</h3>
+                    <p>Notable Achievement: The second-highest run-scorer in ODI cricket with over 14,000 runs.</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\Ricky Ponting.jpg" alt="Player 10">
+                    <h3>Ricky Ponting (Australia)</h3>
+                    <p>Notable Achievement: Captained Australia to two World Cup victories, with over 13,000 Test runs.</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\Wasim Akram.jpg" alt="Player 11">
+                    <h3>Wasim Akram (Pakistan)</h3>
+                    <p>Notable Achievement: One of the greatest fast bowlers in history, with over 900 international wickets.</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\Viv Richards.jpg" alt="Player 12">
+                    <h3>Viv Richards (West Indies)</h3>
+                    <p>Notable Achievement: One of the most destructive batsmen, helped West Indies dominate world cricket in the 1970s and 80s.</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\Rohit Sharma.jpg" alt="Player 13">
+                    <h3>Rohit Sharma (India)</h3>
+                    <p>Notable Achievement: Only player to score three double centuries in ODIs, with the highest individual score of 264 in the format.</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\Glenn McGrath.jpg" alt="Player 14">
+                    <h3>Glenn McGrath (Australia)</h3>
+                    <p>Notable Achievement: Consistently accurate bowler, with over 560 Test wickets.</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\Dhoni.jpg" alt="Player 15">
+                    <h3>MS Dhoni (India)</h3>
+                    <p>Notable Achievement: Captained India to World Cup victories in 2007 (T20) and 2011 (ODI), known for his calm leadership.</p>
+                </div>
+                <div class="player">
+                    <img src="C:\Users\Naveena\Downloads\Ben Stokes.jpg" alt="Player 16">
+                    <h3>Ben Stokes (England)</h3>
+                    <p>Notable Achievement: Played a key role in England's World Cup 2019 victory with remarkable all-round performances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="match-list-container">
+        <h1 class="match-list-title">Top Matches</h1>
+        <div class="match-list-wrapper">
+            <div class="match-list">
+                <div class="match-list-item">
+                    <img class="match-list-item-img" src="C:\Users\Naveena\Downloads\1 (2).png" alt="">
+                    <span class="match-list-item-title">IND vs SA 2024</span>
+                    <p class="match-list-item-desc">India Wins Cricket World Cup, Sealing Its Domination of the Sport
+                    </p>
+                   <a href="https://m.youtube.com/watch?v=3yiWqnKl7lQ&t=76s&pp=ygUpbWVuJ3MgdDIwIHdvcmxkIGN1cCAyMDI0IGZpbmFsIGhpZ2hsaWdodHM%3D" <button class="match-list-item-button" >Watch</button> </a>
+                </div>
+                <div class="match-list-item">
+                    <img class="match-list-item-img" src="C:\Users\Naveena\Downloads\2 (1).jpg" alt="">
+                    <span class="match-list-item-title">ENG vs PAK 1992</span>
+                    <p class="match-list-item-desc">The 1992 Cricket World Cup Final, where Pakistan won its first World Cup under Imran Khan's leadership</p>
+                   <a href="https://www.youtube.com/watch?v=2Km9Q2w4eiE"< button class="match-list-item-button" >Watch</button></a>
+                </div>
+                <div class="match-list-item">
+                    <img class="match-list-item-img" src="C:\Users\Naveena\Downloads\3 (1).png" alt="">
+                    <span class="match-list-item-title">AUS vs SA 1999</span>
+                    <p class="match-list-item-desc">The famous World Cup semi-final, regarded as one of the best games ever played, ending in a dramatic tie</p>
+                    <a href="https://www.youtube.com/watch?v=AocPABE_Opg"< button class="match-list-item-button" >Watch</button></a>
+                </div>
+                <div class="match-list-item">
+                    <img class="match-list-item-img" src="C:\Users\Naveena\Downloads\4 (1).jpg" alt="">
+                    <span class="match-list-item-title">IND vs PAK 2022</span>
+                    <p class="match-list-item-desc">India's thrilling last-ball win over Pakistan in the 2022 T20 World Cup, led by Virat Kohli's unbeaten 82, became an instant classic</p>
+                    <a href="https://www.youtube.com/watch?v=o51WMR8m8KM"< button class="match-list-item-button" >Watch</button> </a>
+                </div>
+                
+                <div class="match-list-item">
+                    <img class="match-list-item-img" src="C:\Users\Naveena\Downloads\5 (1).png" alt="">
+                    <span class="match-list-item-title">IND vs SL 2011</span>
+                    <p class="match-list-item-desc"> India's victory in the 2011 World Cup final at home was a moment of immense joy and pride for the nation. MS Dhoni's six to win the match is one of the most iconic moments in cricket history.</p>
+                   <a href="https://m.youtube.com/watch?v=YphL3Whh5B0&t=1s&pp=ygUOaW5kIHZzIHNsIDIwMTE%3D" < button class="match-list-item-button" >Watch</button></a>
+                </div>
+                
+            </div>
+           
+        </div>
+    </div>
+
+</div>
+<!-- 1st player map -->
+<div><h2 class="legends-title">Hometown Heroes</h2></div>
+<div id="map-container">
+     <div class="player-photo">
+      <img src="C:\Users\Naveena\Downloads\Virat Kohli.jpg" alt="Player Photo">
+    </div>
+    <div class="player-details">
+      <h2>Player Name:Virat Kohli</h2>
+      <p>Age: 35</p>
+      <p>Batting style:Right Hand Bat</p>
+      <p>Home town: New Delhi</p>
+      <p>Country:India</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.32835516133!2d77.20898509999999!3d28.5273522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1729056488235!5m2!1sen!2sin" width="400" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <div id="map-container">
+    <div class="player-photo">
+        <img src="C:\Users\Naveena\Downloads\AB de Villiers.jpg" alt="Player Photo">
+    </div>
+    <div class="player-details">
+        <h2>Player Name: AB de Villiers</h2>
+        <p>Age: 40</p>
+        <p>Batting style: Right-handed batsman</p>
+        <p>Home town: Pretoria</p>
+        <p>Country: South Africa</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229975.25874365817!2d28.033138427359894!3d-25.758557172193132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95619cbec65033%3A0xf66262b07a847b4c!2sPretoria%2C%20South%20Africa!5e0!3m2!1sen!2sin!4v1729057162164!5m2!1sen!2sin" width="400" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div id="map-container">
+    <div class="player-photo">
+        <img src="C:\Users\Naveena\Downloads\sachin.jpg" alt="Player Photo">
+    </div>
+    <div class="player-details">
+        <h2>Player Name: Sachin Tendulkar</h2>
+        <p>Age: 50</p>
+        <p>Batting style: Right-handed batsman</p>
+        <p>Home town: Mumbai</p>
+        <p>Country: India</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.14571458558!2d72.71637318028606!3d19.082177512541435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1729057258807!5m2!1sen!2sin" width="400" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div id="map-container">
+    <div class="player-photo">
+        <img src="C:\Users\Naveena\Downloads\Kumar Sangakkara.jpg" alt="Player Photo">
+    </div>
+    <div class="player-details">
+        <h2>Player Name: Kumar Sangakkara</h2>
+        <p>Age: 46</p>
+        <p>Batting style: Left-handed batsman</p>
+        <p>Home town: Matale</p>
+        <p>Country: Sri Lanka</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63297.001267341286!2d80.55076271955895!3d7.458329476689716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae344d7d465445d%3A0xd6f70562e8850dbc!2sMatale%2C%20Sri%20Lanka!5e0!3m2!1sen!2sin!4v1729057411078!5m2!1sen!2sin" width="400" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div id="map-container">
+    <div class="player-photo">
+        <img src="C:\Users\Naveena\Downloads\Rohit Sharma.jpg" alt="Player Photo">
+    </div>
+    <div class="player-details">
+        <h2>Player Name: Rohit Sharma</h2>
+        <p>Age: 37</p>
+        <p>Batting style: Right-handed batsman</p>
+        <p>Home town: Bansod, Nagpur</p>
+        <p>Country: India</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119065.02905823676!2d78.99010825797473!3d21.161065901994075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5a31faf13%3A0x19b37d06d0bb3e2b!2sNagpur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1729057629904!5m2!1sen!2sin" width="400" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div id="map-container">
+    <div class="player-photo">
+        <img src="C:\Users\Naveena\Downloads\Ben Stokes.jpg" alt="Player Photo">
+    </div>
+    <div class="player-details">
+        <h2>Player Name: Ben Stokes</h2>
+        <p>Age: 33</p>
+        <p>Batting style: Left-handed batsman</p>
+        <p>Home town: Christchurch</p>
+        <p>Country: England</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40396.12638137784!2d-1.801794176329778!3d50.74297904203045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48739852a2137741%3A0x7537818f47e6aad9!2sChristchurch%2C%20UK!5e0!3m2!1sen!2sin!4v1729057722274!5m2!1sen!2sin" width="400" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div id="map-container">
+    <div class="player-photo">
+        <img src="C:\Users\Naveena\Downloads\Dhoni.jpg" alt="Player Photo">
+    </div>
+    <div class="player-details">
+        <h2>Player Name: MS Dhoni</h2>
+        <p>Age: 43</p>
+        <p>Batting style: Right-handed batsman</p>
+        <p>Home town: Ranchi</p>
+        <p>Country: India</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117223.79900197595!2d85.23892442851177!3d23.343183242931968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e104aa5db7dd%3A0xdc09d49d6899f43e!2sRanchi%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1729057782609!5m2!1sen!2sin" width="400" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div id="map-container">
+    <div class="player-photo">
+        <img src="C:\Users\Naveena\Downloads\Viv Richards.jpg" alt="Player Photo">
+    </div>
+    <div class="player-details">
+        <h2>Player Name: Viv Richards</h2>
+        <p>Age: 72</p>
+        <p>Batting style: Right-handed batsman</p>
+        <p>Home town: St. John's</p>
+        <p>Country: West Indies</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30503.341900345906!2d-61.86549449823281!3d17.125511557907473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c12924beb8e1ba5%3A0x7c46122f63db374f!2sSt%20John&#39;s%2C%20Antigua%20and%20Barbuda!5e0!3m2!1sen!2sin!4v1729057906090!5m2!1sen!2sin" width="400" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div id="map-container">
+    <div class="player-photo">
+        <img src="C:\Users\Naveena\Downloads\Wasim Akram.jpg" alt="Player Photo">
+    </div>
+    <div class="player-details">
+        <h2>Player Name: Wasim Akram</h2>
+        <p>Age: 57</p>
+        <p>Batting style: Right-handed batsman</p>
+        <p>Home town: Lahore</p>
+        <p>Country: Pakistan</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30503.030395331236!2d-61.84677196924975!3d17.127410388600516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2sin!4v1729058000754!5m2!1sen!2sin" width="400" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div id="map-container">
+    <div class="player-photo">
+        <img src="C:\Users\Naveena\Downloads\Ricky Ponting.jpg" alt="Player Photo">
+    </div>
+    <div class="player-details">
+        <h2>Player Name: Ricky Ponting</h2>
+        <p>Age: 49</p>
+        <p>Batting style: Right-handed batsman</p>
+        <p>Home town: Launceston</p>
+        <p>Country: Australia</p>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20244.0050225239!2d-4.386996802478893!3d50.636392934181224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486b7e30ce76fec1%3A0xf18aebea9c2fde29!2sLaunceston%2C%20UK!5e0!3m2!1sen!2sin!4v1729058099980!5m2!1sen!2sin" width="400" height="300" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<div class="separator">
+    <span class="separator-text">Join the Conversation!</span>
+</div>
+
+
+<!-- fan zone --> 
+  <div class="contact-form">
+    <span class="heading">Contact Us</span>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" required="">
+      <label for="email">Favourite player:</label>
+      <input type="message" id="email" name="email" required="">
+      <label for="message">Story:</label>
+      <textarea id="message" name="message" required=""></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  
+<div class="separator">
+    <span class="separator-text">Answer this playful Quiz. </span>
+</div>
+
+<div class="quiz-container">
+    <h2 class="question">1.Who is known as "The Wall" of Indian cricket?</h2>
+    <ul class="options">
+      <li>Sourav Ganguly</li>
+      <li>Virat Kohli</li>
+      <li>MS Dhoni</li>
+      <li data-correct="true">Rahul Dravid</li>
+    </ul>
+  </div>
+  
+  <div class="quiz-container">
+    <h2 class="question">2.Which cricket player holds the record for the fastest century in One Day Internationals (ODIs)?</h2>
+    <ul class="options">
+      <li>Chris Gayle</li>
+      <li data-correct="true">AB de Villiers</li>
+      <li>Brendon McCullum</li>
+      <li>Shahid Afridi</li>
+    </ul>
+  </div>
+  
+  <div class="quiz-container">
+    <h2 class="question">3.Who was the first cricketer to score 100 international centuries?</h2>
+    <ul class="options">
+      <li data-correct="true">Sachin Tendulkar</li>
+      <li>Ricky Ponting</li>
+      <li>Jacques Kallis</li>
+      <li>Brian Lara</li>
+    </ul>
+  </div>
+  
+  <div class="quiz-container">
+    <h2 class="question">4.How many centuries has Virat Kohli scored in ODI cricket as of 2023?</h2>
+    <ul class="options">
+      <li>36</li>
+      <li>44</li>
+      <li data-correct="true">50</li>
+      <li>46</li>
+    </ul>
+  </div>
+  
+  <div class="quiz-container">
+    <h2 class="question">5.Who is the only cricketer to have scored 400 runs in a single Test match innings?</h2>
+    <ul class="options">
+      <li>Kumar Sangakkara</li>
+      <li>Virat Kohli</li>
+      <li data-correct="true">Brian Lara</li>
+      <li>Don Bradman</li>
+    </ul>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-heading">Thank you for taking part in the Cricket Legends Quiz! 🏏</p>
+      <p class="footer-subheading">Created with passion for cricket fans worldwide.</p>
+  
+      <hr class="footer-divider">
+  
+      <div class="footer-details">
+        <div class="footer-coder">
+          <p>Coded by <strong>Tenepalli Naveena</strong></p>
+          <p>Date of Creation: <strong>October 16, 2024</strong></p>
+        </div>
+  
+        <div class="footer-social">
+          <p>Stay connected with the latest cricket news and updates!</p>
+          <div class="social-links">
+            <a href="https://github.com/Naveena0930>Github</a> |
+            <a href="https://www.linkedin.com/in/t-naveena-02b9b8277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Linkedin</a> |            
+          </div>
+        </div>
+      </div>  
+      <hr class="footer-divider">  
+      <p class="footer-rights">&copy; 2024 Cricket Legends Quiz. All rights reserved.</p>
+    </div>
+  </footer>
+    <script src="scripts.js">
+      function initMap() {
+  const mapDivIds = ['map-1', 'map-2', 'map-3','map-4','map-5','map-6','map-7','map-8','map-9','map-10']; // IDs of your map divs
+  // Define map and marker options for each map
+  const mapMarkerData = [
+    {
+      center: { lat: 28.6139, lng:77.2088 }, // San Francisco
+      markerPosition: { lat: 28.6139, lng:77.2088 },
+      title: "Marker 1",
+      infoContent: "This is where virat kohli lives.",     
+    },
+    {
+      center: { lat:-25.718607, lng: 28.207338 }, // Los Angeles
+      markerPosition: { lat:-25.718607, lng: 28.207338 },
+      title: "Marker 2",
+      infoContent: "This is where AB de Villers lives."
+    },
+    {
+      center: { lat: 19.0760, lng: 72.8777 }, // Las Vegas
+      markerPosition: {  lat: 19.0760, lng: 72.8777 },
+      title: "Marker 3",
+      infoContent: "This is where virat kohli lives."
+    },
+    {
+      center: { lat: 7.4675, lng: 80.6234 }, // San Francisco
+      markerPosition: { lat: 7.4675, lng: 80.6234 },
+      title: "Marker 1",
+      infoContent: "This is where Kumar Sanggakkara lives.",     
+    },
+    {
+      center: { lat:21.1592, lng: 79.1054 }, // San Francisco
+      markerPosition: { lat:21.1592, lng: 79.1054 },
+      title: "Marker 1",
+      infoContent: "This is where Rohit sharma lives.",     
+    },
+    {
+      center: { lat: 50.7358, lng: 1.7786 }, // San Francisco
+      markerPosition: {  lat: 50.7358, lng: 1.7786},
+      title: "Marker 1",
+      infoContent: "This is where Ben stokes lives.",     
+    },
+    {
+      center: { lat: 23.3441, lng: 85.3096 }, // San Francisco
+      markerPosition: { lat: 23.3441, lng: 85.3096 },
+      title: "Marker 1",
+      infoContent: "This is where MS dhoni lives.",     
+    },
+    {
+      center: { lat: 17.1172, lng: -61.8457 }, // San Francisco
+      markerPosition: {  lat: 17.1172, lng: -61.8457 },
+      title: "Marker 1",
+      infoContent: "This is where Viv Richards lives.",     
+    },
+    {
+      center: { lat: 31.5204, lng: 74.3587 }, // San Francisco
+      markerPosition: {lat: 31.5204, lng: 74.3587},
+      title: "Marker 1",
+      infoContent: "This is where Wasim Akram lives.",
+    },
+    {
+      center: { lat: -41.4391, lng: 147.1358 }, // San Francisco
+      markerPosition: { lat: -41.4391, lng: 147.1358 },
+      title: "Marker 1",
+      infoContent: "This is where Ricky Ponting lives.",
+    }
+  ];
+  // Loop through each map div ID and apply the corresponding map options
+  mapDivIds.forEach((id, index) => {
+    const mapDiv = document.getElementById(id);
+    if (mapDiv) {
+      const mapOptions = {
+        zoom: 8,
+        center: mapMarkerData[index].center // Center the map based on the current index
+      };
+      const map = new google.maps.Map(mapDiv, mapOptions);
+      // Create a marker for each map
+      const marker = new google.maps.Marker({
+        position: mapMarkerData[index].markerPosition,
+        map: map,
+        label: mapMarkerData[index].label,
+        title: mapMarkerData[index].title,
+        draggable: true,
+        animation: google.maps.Animation.DROP
+      });
+      // Create an InfoWindow for the marker
+      const infoWindow = new google.maps.InfoWindow({
+        content: mapMarkerData[index].infoContent
+      });
+      // Add a click event listener to open the InfoWindow when the marker is clicked
+      marker.addListener("click", () => {
+        infoWindow.open(map, marker);
+      });
+    } else {
+      console.error(No element found with ID: ${id});
+    }
+  });
+}
+// Ensure the Google Maps API is loaded before calling initMap
+window.onload = function () {
+  if (typeof google !== 'undefined' && google.maps) {
+    initMap();
+  } else {
+    console.error("Google Maps API not loaded");
+  }
+};
+document.addEventListener('DOMContentLoaded', function () {
+  const options = document.querySelectorAll('.options li');
+  
+  options.forEach(option => {
+      option.addEventListener('click', function () {
+          options.forEach(opt => opt.classList.remove('correct', 'incorrect'));
+          
+          if (this.dataset.correct === 'true') {
+              this.classList.add('correct');
+          } else {
+              this.classList.add('incorrect');
+          }
+      });
+  });
+});
+    </script>
+</body>
+</html>
